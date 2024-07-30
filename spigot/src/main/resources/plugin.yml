@@ -1,0 +1,7 @@
+name: GeyserMessaging
+version: 1.0.0
+main: nl.mthorizons.SpigotPlugin
+description: The spigot plugin for GeyserMessaging
+author: willem.dev
+website: https://mthorizons.nl
+api-version: '1.21'
