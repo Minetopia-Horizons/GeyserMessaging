@@ -1,7 +1,10 @@
-package nl.mthorizons.packets;
+package nl.mthorizons.messaging.packets;
 
-import nl.mthorizons.packets.translators.EntityFlagTranslator;
-import nl.mthorizons.packets.translators.PacketTranslator;
+import nl.mthorizons.messaging.common.packets.PayloadPacket;
+import nl.mthorizons.messaging.packets.translators.EntityFlagTranslator;
+import nl.mthorizons.messaging.packets.translators.PacketTranslator;
+import org.geysermc.geyser.session.GeyserSession;
+import org.geysermc.mcprotocollib.network.Session;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,10 +19,10 @@ public class PacketHandler {
         register(new EntityFlagTranslator());
     }
 
-    public void handle(PayloadPacket packet) {
+    public void handle(GeyserSession session, PayloadPacket packet) {
         for (PacketTranslator translator : translators) {
             if (!translator.getType().isInstance(packet)) continue;
-            translator.translate(packet);
+            translator.translate(session, packet);
 
             return;
         }

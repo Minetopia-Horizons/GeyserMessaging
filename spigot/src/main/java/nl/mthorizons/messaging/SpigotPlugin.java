@@ -1,7 +1,8 @@
-package nl.mthorizons;
+package nl.mthorizons.messaging;
 
 import lombok.Getter;
-import nl.mthorizons.api.SpigotAPI;
+import nl.mthorizons.messaging.api.SpigotAPI;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
@@ -15,6 +16,7 @@ public class SpigotPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        getServer().getMessenger().registerOutgoingPluginChannel(this, "geysermessaging:main");
     }
 
 }

@@ -1,6 +1,6 @@
 id: geysermessaging
 name: GeyserMessaging
-main: nl.mthorizons.GeyserPlugin
-api: 2.2.0
+main: nl.mthorizons.messaging.GeyserPlugin
+api: 1.0.0
 version: 1.0.0
 authors: [willem.dev]

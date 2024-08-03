@@ -1,7 +1,7 @@
-package nl.mthorizons.utils;
+package nl.mthorizons.messaging.utils;
 
 import lombok.experimental.UtilityClass;
-import nl.mthorizons.types.CommonEntityFlag;
+import nl.mthorizons.messaging.common.types.CommonEntityFlag;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
 
 @UtilityClass

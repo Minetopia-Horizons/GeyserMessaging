@@ -1,10 +1,15 @@
 plugins {
     id("java")
     id("io.freefair.lombok") version "8.6"
+    id("io.github.goooler.shadow") version "8.1.7"
 }
 
 group = "nl.mthorizons"
 version = "1.0-SNAPSHOT"
+
+tasks.shadowJar {
+    archiveFileName = "geysermessaging-spigot.jar";
+}
 
 repositories {
     mavenCentral()

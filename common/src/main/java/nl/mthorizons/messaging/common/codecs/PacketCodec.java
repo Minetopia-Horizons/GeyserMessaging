@@ -1,12 +1,11 @@
-package nl.mthorizons.codecs;
+package nl.mthorizons.messaging.common.codecs;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.experimental.UtilityClass;
-import nl.mthorizons.packets.PayloadPacket;
+import nl.mthorizons.messaging.common.packets.PayloadPacket;
 
 import java.io.IOException;
 
@@ -16,7 +15,7 @@ public class PacketCodec {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     static {
-        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.JAVA_LANG_OBJECT, JsonTypeInfo.As.PROPERTY);
+        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.EVERYTHING, JsonTypeInfo.As.PROPERTY);
         objectMapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
     }
 

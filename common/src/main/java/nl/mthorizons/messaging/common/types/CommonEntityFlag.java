@@ -1,4 +1,4 @@
-package nl.mthorizons.types;
+package nl.mthorizons.messaging.common.types;
 
 public enum CommonEntityFlag {
     ON_FIRE,
