@@ -1,2 +1,3 @@
 package nl.mthorizons.messaging.common.packets;
-public class PayloadPacket {}
+
+public abstract class PayloadPacket {}

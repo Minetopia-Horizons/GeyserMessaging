@@ -18,6 +18,16 @@ repositories {
 
 dependencies {
     implementation(project(":common"))
+    implementation("org.spongepowered:configurate-core:4.1.2")
+    implementation("org.spongepowered:configurate-hocon:4.1.2")
     compileOnly("org.geysermc.geyser:api:2.2.0-SNAPSHOT")
     compileOnly(files("libs/Geyser-Standalone.jar"))
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+tasks.shadowJar {
+    relocate("com.fasterxml.jackson", "nl.mthorizons.jackson")
 }

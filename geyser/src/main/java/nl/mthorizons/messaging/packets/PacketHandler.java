@@ -1,8 +1,7 @@
 package nl.mthorizons.messaging.packets;
 
 import nl.mthorizons.messaging.common.packets.PayloadPacket;
-import nl.mthorizons.messaging.packets.translators.EntityFlagTranslator;
-import nl.mthorizons.messaging.packets.translators.PacketTranslator;
+import nl.mthorizons.messaging.packets.translators.*;
 import org.geysermc.geyser.session.GeyserSession;
 import org.geysermc.mcprotocollib.network.Session;
 
@@ -16,7 +15,7 @@ public class PacketHandler {
     private final List<PacketTranslator> translators = new ArrayList<>();
 
     public PacketHandler() {
-        register(new EntityFlagTranslator());
+        register(new CustomEntityTranslator(), new UpdatePropertyTranslator(), new EntityForceLinkTranslator(), new EntityDataTranslator());
     }
 
     public void handle(GeyserSession session, PayloadPacket packet) {

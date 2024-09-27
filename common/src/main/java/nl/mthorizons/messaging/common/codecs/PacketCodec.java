@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import lombok.experimental.UtilityClass;
+import nl.mthorizons.messaging.common.packets.CustomEntityPacket;
 import nl.mthorizons.messaging.common.packets.PayloadPacket;
 
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.io.IOException;
 @UtilityClass
 public class PacketCodec {
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     static {
         objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.EVERYTHING, JsonTypeInfo.As.PROPERTY);
